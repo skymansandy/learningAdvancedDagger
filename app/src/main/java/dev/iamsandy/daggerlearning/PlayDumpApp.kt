@@ -1,15 +1,18 @@
 package dev.iamsandy.daggerlearning
 
-import android.app.Application
-import dev.iamsandy.daggerlearning.di.component.AppComponent
+import dagger.android.AndroidInjector
+import dagger.android.DaggerApplication
 import dev.iamsandy.daggerlearning.di.component.DaggerAppComponent
 
-class PlayDumpApp : Application() {
-
-    lateinit var appComponent: AppComponent
+class PlayDumpApp : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.create()
+    }
+
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
+        return DaggerAppComponent.builder()
+            .application(this)
+            .build()
     }
 }
