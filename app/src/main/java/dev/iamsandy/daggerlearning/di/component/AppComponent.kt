@@ -8,11 +8,15 @@ import dagger.android.support.AndroidSupportInjectionModule
 import dev.iamsandy.daggerlearning.PlayDumpApp
 import dev.iamsandy.daggerlearning.di.module.ActivityBuilderModule
 import dev.iamsandy.daggerlearning.di.module.AppModule
+import dev.iamsandy.daggerlearning.di.module.GlideModule
+import javax.inject.Singleton
 
+@Singleton
 @Component(
     modules = [
         AndroidSupportInjectionModule::class,
         ActivityBuilderModule::class,
+        GlideModule::class,
         AppModule::class]
 )
 interface AppComponent : AndroidInjector<PlayDumpApp> {
