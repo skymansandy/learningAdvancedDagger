@@ -1,4 +1,4 @@
-package dev.iamsandy.daggerlearning.di.scope
+package dev.iamsandy.daggerlearning.di.auth
 
 import java.lang.annotation.Documented
 import java.lang.annotation.Retention

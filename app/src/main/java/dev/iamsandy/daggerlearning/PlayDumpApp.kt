@@ -2,7 +2,7 @@ package dev.iamsandy.daggerlearning
 
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
-import dev.iamsandy.daggerlearning.di.component.DaggerAppComponent
+import dev.iamsandy.daggerlearning.di.app.DaggerAppComponent
 
 class PlayDumpApp : DaggerApplication() {
 

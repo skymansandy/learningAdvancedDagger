@@ -1,4 +1,4 @@
-package dev.iamsandy.daggerlearning.di.module
+package dev.iamsandy.daggerlearning.di.app
 
 import android.app.Application
 import android.graphics.drawable.Drawable
