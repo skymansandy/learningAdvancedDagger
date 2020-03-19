@@ -7,8 +7,6 @@ import androidx.databinding.DataBindingUtil
 import dev.iamsandy.daggerlearning.R
 import dev.iamsandy.daggerlearning.databinding.ActivityMainBinding
 import dev.iamsandy.daggerlearning.ui.base.BaseActivity
-import dev.iamsandy.daggerlearning.ui.post.PostsFragment
-import dev.iamsandy.daggerlearning.ui.profile.ProfileFragment
 
 class MainActivity : BaseActivity() {
 
@@ -23,10 +21,6 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container, PostsFragment())
-            .commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
