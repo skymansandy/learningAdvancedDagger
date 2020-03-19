@@ -4,6 +4,7 @@ import dev.iamsandy.daggerlearning.ui.auth.model.User
 import io.reactivex.Flowable
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface AuthApi {
 

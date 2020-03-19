@@ -1,6 +1,7 @@
 package dev.iamsandy.daggerlearning.ui.auth
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.text.TextUtils
@@ -15,6 +16,7 @@ import dev.iamsandy.daggerlearning.R
 import dev.iamsandy.daggerlearning.databinding.ActivityAuthBinding
 import dev.iamsandy.daggerlearning.ui.auth.model.AuthResource
 import dev.iamsandy.daggerlearning.ui.auth.model.User
+import dev.iamsandy.daggerlearning.ui.main.MainActivity
 import dev.iamsandy.daggerlearning.viewmodels.ViewModelProviderFactory
 import javax.inject.Inject
 
@@ -73,6 +75,7 @@ class AuthActivity : DaggerAppCompatActivity() {
                     AuthResource.Status.AUTHENTICATED -> {
                         hideProgressBar()
                         Log.d(TAG, "User logged in")
+                        startActivity(Intent(this, MainActivity::class.java))
                     }
                     AuthResource.Status.ERROR -> {
                         hideProgressBar()
