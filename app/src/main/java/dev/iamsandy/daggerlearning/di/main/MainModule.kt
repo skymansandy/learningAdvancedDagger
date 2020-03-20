@@ -9,6 +9,7 @@ import retrofit2.Retrofit
 @Module
 class MainModule {
 
+    @MainScope
     @Provides
     fun providePostsApi(retrofit: Retrofit): PostsApi {
         return retrofit.create(PostsApi::class.java)

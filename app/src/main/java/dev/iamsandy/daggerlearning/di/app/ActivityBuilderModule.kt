@@ -7,6 +7,7 @@ import dev.iamsandy.daggerlearning.di.auth.AuthScope
 import dev.iamsandy.daggerlearning.di.auth.AuthViewModelModule
 import dev.iamsandy.daggerlearning.di.main.MainFragmentBuildersModule
 import dev.iamsandy.daggerlearning.di.main.MainModule
+import dev.iamsandy.daggerlearning.di.main.MainScope
 import dev.iamsandy.daggerlearning.di.main.MainViewModelModule
 import dev.iamsandy.daggerlearning.ui.auth.AuthActivity
 import dev.iamsandy.daggerlearning.ui.main.MainActivity
@@ -20,6 +21,7 @@ abstract class ActivityBuilderModule {
     )
     abstract fun contributeAuthActivity(): AuthActivity
 
+    @MainScope
     @ContributesAndroidInjector(
         modules = [MainFragmentBuildersModule::class,
             MainViewModelModule::class,

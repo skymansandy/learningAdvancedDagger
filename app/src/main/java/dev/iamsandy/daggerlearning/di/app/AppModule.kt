@@ -2,14 +2,17 @@ package dev.iamsandy.daggerlearning.di.app
 
 import dagger.Module
 import dagger.Provides
-import dev.iamsandy.daggerlearning.di.auth.AuthScope
-import dev.iamsandy.daggerlearning.util.Constants
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import dev.iamsandy.daggerlearning.ui.auth.model.User
+import javax.inject.Named
+import javax.inject.Singleton
 
 @Module
 class AppModule {
 
-
+    @Singleton
+    @Provides
+    @Named("app_user")
+    fun provideUser(): User {
+        return User(id = 1)
+    }
 }

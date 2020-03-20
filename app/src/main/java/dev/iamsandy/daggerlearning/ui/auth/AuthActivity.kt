@@ -19,6 +19,7 @@ import dev.iamsandy.daggerlearning.ui.auth.model.User
 import dev.iamsandy.daggerlearning.ui.main.MainActivity
 import dev.iamsandy.daggerlearning.viewmodels.ViewModelProviderFactory
 import javax.inject.Inject
+import javax.inject.Named
 
 class AuthActivity : DaggerAppCompatActivity() {
 
@@ -41,6 +42,14 @@ class AuthActivity : DaggerAppCompatActivity() {
 
     @Inject
     lateinit var authApi: AuthApi
+
+    @Inject
+    @Named("app_user")
+    lateinit var userApp: User
+
+    @Inject
+    @Named("auth_user")
+    lateinit var userAuth: User
 
     @Inject
     lateinit var vmFactory: ViewModelProviderFactory
@@ -84,6 +93,9 @@ class AuthActivity : DaggerAppCompatActivity() {
                     }
                 }
             })
+
+        Log.d(TAG, "App User: $userApp")
+        Log.d(TAG, "App User: $userAuth")
     }
 
     private fun showProgressBar() {
